@@ -1,0 +1,7 @@
+package com.zm.cpm.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public class OrganizationRespository implements JpaRepository<T, ID> {
+
+}

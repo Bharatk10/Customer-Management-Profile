@@ -1,0 +1,5 @@
+package com.zm.cpm.mapper;
+
+public class OrganizationProfileMapper {
+
+}

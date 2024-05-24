@@ -1,0 +1,20 @@
+package com.zm.cpm.service;
+
+import org.springframework.stereotype.Service;
+
+import com.zm.cpm.dto.OrganizationProfileDTO;
+import com.zm.cpm.mapper.OrganizationProfileMapper;
+import com.zm.cpm.repository.OrganizationRespository;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class OrganizationServiceImpl {
+	private OrganizationRespository organizationRespository;
+	
+	public void createOrg(OrganizationProfileDTO orgProfDto) {
+		organizationRespository.save(OrganizationProfileMapper.toEntity(orgProfDto));
+	}
+
+}

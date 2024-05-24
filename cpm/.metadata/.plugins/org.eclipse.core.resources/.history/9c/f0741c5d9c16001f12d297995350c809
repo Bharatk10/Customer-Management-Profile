@@ -1,0 +1,7 @@
+package com.zm.cpm.dto;
+
+public class OrganizationDocumnets {
+	private String fileName;
+	private byte[] fileContent;
+
+}

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cmp-project
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: Root@123
+    url: jdbc:postgresql://localhost:5432/db_zettamine?currentSchema=cpm
+    username: postgres
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+file:
+ storage:
+  location:/cmp-project/org_documents

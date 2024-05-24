@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: cmp-project
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: Root@123
+    url: jdbc:postgresql://localhost:5432/db_mpa?currentSchema=mpa
+    username: postgres
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

@@ -1,0 +1,12 @@
+1716014993960	Rename type 'OrganizationRespository'
+1716015012094	Rename type 'OrganizationServiceImpl'
+1716015029503	Rename type 'OrganizationController'
+1716015131168	Rename type 'CustomerRespository'
+1716015142131	Rename type 'CustomerServiceImpl'
+1716015183191	Rename type 'CustomerDto'
+1716015197554	Rename type 'CustomerController'
+1716016379884	Delete element
+1716016385729	Delete element
+1716023261239	Rename type 'OrganizationProfile'
+1716023300994	Rename type 'OrganizationProfileDTO'
+1716023329754	Rename compilation unit 'OrganizationDto.java'

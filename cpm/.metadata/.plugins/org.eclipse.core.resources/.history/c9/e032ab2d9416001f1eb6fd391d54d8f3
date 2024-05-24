@@ -1,0 +1,75 @@
+package com.zm.cpm.service;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.zm.cpm.dto.OrganizationProfileDTO;
+import com.zm.cpm.entities.OrganizationDocument;
+import com.zm.cpm.mapper.OrganizationProfileMapper;
+import com.zm.cpm.repository.OrganizationDocumentRepository;
+import com.zm.cpm.repository.OrganizationRespository;
+
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class OrganizationServiceImpl {
+	
+	//@Value("${file.storage.location}")
+	private final String storageLocation="/cmp-project/org_documents";
+	
+	
+	private OrganizationRespository organizationRespository;
+	
+	private OrganizationDocumentRepository orgDocumentRepository;
+	
+	public void createOrg(OrganizationProfileDTO orgProfDto) {
+		
+		organizationRespository.save(OrganizationProfileMapper.toEntity(orgProfDto));
+	}
+	
+	public void saveOrgDocuments(MultipartFile file, Integer orgId) {
+		
+	System.err.println(	organizationRespository.findAll().size());
+		
+		OrganizationDocument document= new OrganizationDocument();
+		document.setFileName(storeFile(file, orgId));
+		
+		document.setOrganizationProfile(organizationRespository.findById(orgId).get());
+		
+		log.info("Successfully file created");
+		
+	}
+	
+	
+	private String storeFile(MultipartFile file, Integer orgId) {
+		
+		File orgDir=new File(storageLocation,"organization_"+orgId);
+		
+		if(!orgDir.exists()) {
+				orgDir.mkdir();
+		}
+		
+		
+		File destinationFile= new File(orgDir,file.getOriginalFilename());
+		try {
+			file.transferTo(destinationFile);
+		} catch (IllegalStateException | IOException e) {
+		  log.info("File Not Created");
+		}
+		
+		return destinationFile.getAbsolutePath();		
+	}
+
+}

@@ -1,9 +1,0 @@
-package com.zm.cpm.entities;
-
-import jakarta.persistence.Entity;
-
-@Entity
-public class Organization {
-	
-
-}

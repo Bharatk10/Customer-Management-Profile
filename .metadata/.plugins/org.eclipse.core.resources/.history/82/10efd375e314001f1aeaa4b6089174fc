@@ -1,5 +1,0 @@
-package com.zm.cpm.exception;
-
-public class DuplicateException extends RuntimeException {
-
-}

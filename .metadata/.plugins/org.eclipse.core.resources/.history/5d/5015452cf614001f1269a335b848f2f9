@@ -1,0 +1,11 @@
+package com.zm.cpm.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.zm.cpm.entities.OrganizationProfileDTO;
+
+public interface OrganizationRespository extends JpaRepository<OrganizationProfileDTO, Serializable> {
+
+}

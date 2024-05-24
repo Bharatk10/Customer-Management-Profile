@@ -1,0 +1,5 @@
+package com.zm.cpm.controller;
+
+public class OrganizationController {
+
+}

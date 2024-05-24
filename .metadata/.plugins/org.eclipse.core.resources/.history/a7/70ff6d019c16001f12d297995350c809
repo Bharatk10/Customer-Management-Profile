@@ -1,0 +1,5 @@
+package com.zm.cpm.dto;
+
+public class OrganizationDocumnets {
+
+}
